@@ -35,17 +35,18 @@ type ActionReceipt struct {
 
 // BaseActionTrace corresponds to a `base_action_trace` from `chain/trace.hpp`
 type BaseActionTrace struct {
-	Receipt          ActionReceipt      `json:"receipt"`
-	Action           eos.Action         `json:"act"`
-	ContextFree      bool               `json:"context_free"`
-	Elapsed          int64              `json:"elapsed"`
-	Console          string             `json:"console"`
-	TransactionID    string             `json:"trx_id"`
-	BlockNum         uint32             `json:"block_num"`
-	BlockTime        eos.BlockTimestamp `json:"block_time"`
-	ProducerBlockID  *string            `json:"producer_block_id,omitempty"`
-	AccountRAMDeltas []*AccountRAMDelta `json:"account_ram_deltas"`
-	Except           json.RawMessage    `json:"except"`
+	Receipt            ActionReceipt      `json:"receipt"`
+	Action             eos.Action         `json:"act"`
+	ContextFree        bool               `json:"context_free"`
+	Elapsed            int64              `json:"elapsed"`
+	Console            string             `json:"console"`
+	TransactionID      string             `json:"trx_id"`
+	BlockNum           uint32             `json:"block_num"`
+	BlockTime          eos.BlockTimestamp `json:"block_time"`
+	ProducerBlockID    *string            `json:"producer_block_id,omitempty"`
+	AccountRAMDeltas   []*AccountRAMDelta `json:"account_ram_deltas"`
+	Except             json.RawMessage    `json:"except"`
+	ReturnValueHexData string             `json:"return_value_hex_data,omitempty"`
 }
 
 // AccountRAMDelta corresponds to an `account_delta` from `chain/trace.hpp`
